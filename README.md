@@ -1,27 +1,7 @@
-# JsonPlaceHolder
+# Demo Json Place Holder Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+Este proyecto usa el API REST de Json PLace Holder [https://jsonplaceholder.typicode.com/](https://jsonplaceholder.typicode.com/), que nos proporciona los end points para hacer un CRUD, este pequeño ejemplo usa el end point de usuarios para obtenerlos y renderizarlos en una tabla, también la creación, edición y eliminación de un usuario.
 
-## Development server
+Cabe recalcar que los cambios que se hacen la creación, edición y eliminación son datos falsos tal como lo indica en la documentación del proyecto [https://jsonplaceholder.typicode.com/guide/](https://jsonplaceholder.typicode.com/guide/), solo simula que se realizaron dichas operaciones, solamente las simula obteniendo una respuesta positiva del servidor (20X). Por ese motivo los cambios realizados no se reflejarán en nuestra aplicación.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+El demo del proyecto esta en este enlace [https://infallible-bose-201720.netlify.app/](https://infallible-bose-201720.netlify.app/)
