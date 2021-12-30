@@ -1,0 +1,66 @@
+<form nz-form [formGroup]="userForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Nombre</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="userErrorTpl">
+        <input nz-input formControlName="name" placeholder="Ingrese su nombre" />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')">Ingrese su nombre!</ng-container>
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>E-mail</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="emailErrorTpl">
+        <input nz-input formControlName="email" placeholder="Ingrese un email" type="email" />
+        <ng-template #emailErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('pattern')">No es un correo valido!</ng-container>
+          <ng-container *ngIf="control.hasError('required')">Ingrese un correo!</ng-container>
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Direccion</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="direccionErrorTpl">
+          <input nz-input formControlName="address" placeholder="Ingrese una direccion" type="text" />
+          <ng-template #direccionErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">Ingrese una direccion</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+   
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Telefono</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="fonoErrorTpl">
+          <input nz-input formControlName="phone" placeholder="Ingrese su telefono" />
+          <ng-template #fonoErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">Ingrese su telefono!</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>  
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Website</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="webErrorTpl">
+          <input nz-input formControlName="website" placeholder="http://demo.com" />
+          <ng-template #webErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">Ingrese su sitio web!</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Compañia</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzHasFeedback [nzErrorTip]="userErrorTpl">
+          <input nz-input formControlName="company" placeholder="Ingrese su empresa" />
+          <ng-template #userErrorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">Ingrese su empresa!</ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+    
+    <nz-form-item>
+      <nz-form-control [nzOffset]="7" [nzSpan]="12">
+        <button nz-button nzType="primary" [disabled]="!userForm.valid">Ok</button>
+        <button nz-button (click)="resetForm()">Reset</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>

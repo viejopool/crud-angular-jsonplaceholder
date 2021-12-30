@@ -1,0 +1,28 @@
+<nz-layout class="layout">
+    <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0">
+      <div >
+        <img src="../assets/logosiro.png" >
+      </div>
+      <ul nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-submenu nzTitle="Usuarios" nzIcon="user" nzOpen>
+            <ul>
+              <li nz-menu-group>
+                <ul>
+                  <li nz-menu-item [routerLink]="['/listar']">Listar</li>
+                  <li nz-menu-item routerLink='nuevo'>Nuevo</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+      </ul>
+    </nz-sider>
+    <nz-layout>
+      <nz-header>Administración de Usuarios</nz-header>
+      <nz-content>
+        <div class="inner-content">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+      <nz-footer>Desarrollado por Paul Vizuete <a href="https://siro.ec" target="_blank" >https://siro.ec</a> </nz-footer>
+    </nz-layout>
+  </nz-layout>

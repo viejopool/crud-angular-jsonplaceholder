@@ -1,0 +1,36 @@
+<div *ngIf="usuarios$ |async as usuarios">
+  <nz-table #headerTable [nzData]="usuarios" [nzPageSize]="50" [nzScroll]="{ y: '240px' }">
+    <thead>
+      <tr>
+        <th nzWidth="50px">No</th>
+        <th>Nombre</th>
+        <th>Mail</th>
+        <th>Direccion</th>
+        <th>Teléfono</th>
+        <th>Website</th>
+        <th>Compañia</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of headerTable.data">
+        <td>{{data.id}}</td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.address.street }} {{ data.address.suite }}</td>
+        <td>{{data.phone}}</td>
+        <td>{{data.website}}</td>
+        <td>{{data.company.name}}</td>
+        <td>
+          <i (click)="editUser(data)" nz-icon nzType="edit" nzTheme="twotone"></i>
+          <nz-divider nzType="vertical"></nz-divider>
+          <i nz-popconfirm
+          nzPopconfirmTitle="Seguro desea eliminar este usuario?"
+          nzPopconfirmPlacement="bottom"
+          (nzOnConfirm)="deleteUser(data.id)"
+           nz-icon nzType="delete" nzTheme="twotone" nzTwotoneColor="#eb2f96"></i>
+          </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
